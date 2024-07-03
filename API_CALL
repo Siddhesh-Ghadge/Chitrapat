@@ -1,0 +1,18 @@
+const CallAPI = () => {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2Y5MjA3NmYwNjIzOTI5NDAzYTgyNjliNmVmMjNmZCIsInN1YiI6IjY1MmNlNDgxMDI0ZWM4MDBjNzc1MDdmNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eDL_-1EZb8AuQuq97rGh14lcQkcIy3P5y0--mLKss24",
+    },
+  };
+
+  fetch(
+    "https://api.themoviedb.org/3/search/movie?query=Game%20of%20Thrones&include_adult=false&language=en-US&page=1",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+};
